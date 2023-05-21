@@ -20,10 +20,10 @@ async def song(client, message: Message):
     if not urlissed:
         await client.send_message(
             message.chat.id,
-            "Sintaks Perintah Tidak Valid, Silakan Periksa Menu Bantuan Untuk Tahu Lebih Banyak!",
+            "ᴏʜᴏᴏ",
         )
         return
-    pablo = await client.send_message(message.chat.id, f"**🔎Sedang Mencari Lagu** `{urlissed}`")
+    pablo = await client.send_message(message.chat.id, f"**🔎sᴇᴀʀᴄʜ ʏᴏᴜʀ sᴏɴɢ** `{urlissed}`")
     search = SearchVideos(f"{urlissed}", offset=1, mode="dict", max_results=1)
     mi = search.result()
     mio = mi["search_result"]
@@ -62,8 +62,8 @@ async def song(client, message: Message):
         return
     c_time = time.time()
     capy = f"""
-**❤️‍🔥 Nama Lagu:** [{thum}]({mo})
-**🗃️ Permintaan Dari:** {message.from_user.mention}
+**❤️‍🔥 sᴏɴɢ:** [{thum}]({mo})
+**🗃️ ᴏᴡɴᴇʀ:** {message.from_user.mention}
 """
     file_stark = f"{ytdl_data['id']}.mp3"
     await client.send_audio(
@@ -78,7 +78,7 @@ async def song(client, message: Message):
         progress_args=(
             pablo,
             c_time,
-            f"**Sedang Mendownload Lagu 📥** `{urlissed}`",
+            f"**ᴡᴀɪᴛ ɴᴏᴡ ᴅᴏᴡɴʟᴏᴀᴅ 📥** `{urlissed}`",
             file_stark,
         ),
     )
